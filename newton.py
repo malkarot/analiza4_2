@@ -52,6 +52,4 @@ p = lambda x: x**3 - x**2 - 1
 Dp = lambda x: 3*x**2 - 2*x
 approx = newton(p,Dp,1,1e-10,10)
 print(approx)
-"""
-A Python program for the Neville's algorithm.
-"""
+
