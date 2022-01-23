@@ -1,6 +1,6 @@
 # Adi buchris
-#Esty fridmen
-#Mlky rotshild
+#Esty friedmen
+#Malky rotshild
 def newton(f,Df,x0,epsilon,max_iter):
     '''Approximate solution of f(x)=0 by Newton's method.
 
@@ -31,11 +31,13 @@ def newton(f,Df,x0,epsilon,max_iter):
     --------
     >>> f = lambda x: x**2 - x - 1
     >>> Df = lambda x: 2*x - 1
-    >>> newton(f,Df,1,1e-8,10)
+    >>> newton(f,Df,0,2,1e-8,10)
     Found solution after 5 iterations.
     1.618033988749989
     '''
-    xn = x0
+    xn = (a+b)/2
+    #  We'll select x0 to be the middle of a domain
+    
     for n in range(0,max_iter):
         fxn = f(xn)
         if abs(fxn) < epsilon:
@@ -50,6 +52,6 @@ def newton(f,Df,x0,epsilon,max_iter):
     return None
 p = lambda x: x**3 - x**2 - 1
 Dp = lambda x: 3*x**2 - 2*x
-approx = newton(p,Dp,1,1e-10,10)
+approx = newton(p,Dp,0,2,1e-10,10)
 print(approx)
 
